@@ -1,3 +1,8 @@
+<h1>Crown Clothing (Capstone Project)</h1>
+
+<h4>Tech Stack:</h4>
+<p>HTML, SCSS, React, React Router, </p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

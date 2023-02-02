@@ -5,7 +5,6 @@ import Navigation from './routes/navigation/navigation.component';
 import SignIn from './routes/sign-in/sign-in.component';
 import Contact from './routes/contact/contact.component';
 
-
 const Shop = () => {
   return(
     <h1>Shop Test</h1>

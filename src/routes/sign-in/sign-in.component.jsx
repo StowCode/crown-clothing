@@ -32,7 +32,7 @@ const SignIn = () => {
                 Sign in with Google Popup
             </button>
 
-            <SignUpForm />
+            
 
 {/*             <button onClick={signInWithGoogleRedirect}>
                 Sign in with Google Redirect

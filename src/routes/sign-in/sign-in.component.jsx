@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { getRedirectResult } from 'firebase/auth'
 
+import '../sign-in/sign-in.styles.scss';
+
 import { 
     auth,
     signInWithGooglePopup, 
@@ -26,15 +28,13 @@ const SignIn = () => {
 
     return(
         <div>
-            <h1>Sign In</h1>
-
-            <button onClick={logGoogleUser}>
-                Sign in with Google Popup
+            <button id='google-button' onClick={logGoogleUser}>
+                Sign-In
             </button>
 
             
 
-{/*             <button onClick={signInWithGoogleRedirect}>
+        {/* <button onClick={signInWithGoogleRedirect}>
                 Sign in with Google Redirect
             </button> */}
 

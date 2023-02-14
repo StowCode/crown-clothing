@@ -23,9 +23,9 @@ const SignIn = () => {
 
     return(
         <div>
-            <button id='google-button' class='google-button-container' onClick={logGoogleUser}>
-                SIGN-IN
-            </button>
+            <span id='google-button' className='google-button nav-link' onClick={logGoogleUser}>
+                SIGN IN
+            </span>
 
 
         </div>

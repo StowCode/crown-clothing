@@ -14,6 +14,7 @@ const Navigation = () => {
     const signOutHandler = async () => {
         await signOutUser();
         setCurrentUser(null);
+        console.log('Signed Out')
     }
 
     // if there is a currentUser tell us the displayName
@@ -39,7 +40,7 @@ const Navigation = () => {
                     <Link className='nav-link' to='/shop'>SHOP</Link>
                     <Link className='nav-link' to='/contact'>CONTACT</Link>
 
-                    {currentUser ? (<span className='google-button-container' onClick={signOutHandler}>SIGN-OUT</span>) : (<SignIn />) }
+                    {currentUser ? (<span className='nav-link google-button' onClick={signOutHandler}>SIGN OUT</span>) : (<SignIn />) }
 
                 </div>
             </div>

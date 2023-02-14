@@ -1,6 +1,6 @@
 
 
-#google-button {
+.google-button-container {
     background-color: #4c8bf5;
     border: none;
     padding: none;
@@ -12,6 +12,6 @@
     font-size: 16px;
 }
 
-#google-button:hover {
+.google-button-container:hover {
     filter:brightness(110%);
 }

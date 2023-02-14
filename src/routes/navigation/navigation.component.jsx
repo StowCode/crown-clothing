@@ -4,15 +4,28 @@ import { Fragment, useContext } from 'react';
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg';
 import SignIn  from '../sign-in/sign-in.component';
 import { UserContext } from '../../contexts/user.context';
+import {signOutUser} from '../../utils/firebase/firebase.utils';
 
 import './navigation.styles.scss';
 
 const Navigation = () => {
-    const { currentUser } = useContext(UserContext);
+    const { currentUser, setCurrentUser } = useContext(UserContext);
 
- /*    if currentUser {
-        console.log(currentUser.displayName)
-    } */
+    const signOutHandler = async () => {
+        await signOutUser();
+        setCurrentUser(null);
+    }
+
+    // if there is a currentUser tell us the displayName
+    const findName = () => {
+        try {
+            console.log(currentUser.displayName)
+        } catch (error) {
+            return;
+        }
+    }
+    findName();
+
 
     return(
         <Fragment>
@@ -25,7 +38,9 @@ const Navigation = () => {
                     <Link className='nav-link' to='/'>HOME</Link>
                     <Link className='nav-link' to='/shop'>SHOP</Link>
                     <Link className='nav-link' to='/contact'>CONTACT</Link>
-                    <SignIn />
+
+                    {currentUser ? (<span className='google-button-container' onClick={signOutHandler}>SIGN-OUT</span>) : (<SignIn />) }
+
                 </div>
             </div>
             <Outlet />

@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { getRedirectResult } from 'firebase/auth'
 
 import '../sign-in/sign-in.styles.scss';
+import { UserContext } from '../../contexts/user.context';
 
 import { 
     auth,
@@ -10,12 +11,14 @@ import {
  } from '../../utils/firebase/firebase.utils';
 
 
-
 const SignIn = () => {
+
+    const { setCurrentUser } = useContext(UserContext);
 
     const logGoogleUser = async () => {
         const {user} = await signInWithGooglePopup();
         createUserDocumentFromAuth(user);
+        setCurrentUser(user)
     }
 
     return(
